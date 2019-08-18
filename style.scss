@@ -1,0 +1,199 @@
+/*
+Theme Name: Bits & Letters
+Theme URI: https://wordpress.org/themes/bitsandletters/
+Author: the WordPress team
+Author URI: https://demaree.me/
+Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. Twenty Nineteen is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.
+Requires at least: WordPress 4.9.6
+Version: 0.1
+License: MIT License
+License URI: LICENSE
+Text Domain: bitsandletters
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Twenty Nineteen is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Normalize
+# Typography
+	## Headings
+	## Copy
+# Elements
+	## Lists
+	## Tables
+# Forms
+	## Buttons
+	## Fields
+# Navigation
+	## Links
+	## Menus
+	## Next & Previous
+# Accessibility
+# Alignments
+# Clearings
+# Layout
+# Widgets
+# Content
+	## Archives
+	## Posts and pages
+	## Comments
+# Blocks
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "sass/variables-site/variables-site";
+@import "sass/mixins/mixins-master";
+
+/* Normalize */
+@import "sass/normalize";
+
+/* Accessibility */
+@import "sass/modules/accessibility";
+
+/* Typography */
+@import "sass/typography/typography";
+
+/* Elements */
+@import "sass/elements/elements";
+
+/* Blocks */
+@import "sass/blocks/blocks";
+
+
+/* FINALLY, MY STYLES */
+
+$color__dd-background-body--light: white;
+$color__dd-text-main--light: #1a1a1a;
+
+$color__dd-background-body--dark: #1a1a1a;
+$color__dd-text-main--dark: white;
+
+@media (prefers-color-scheme: dark) {
+	body:not(.prefers-light-theme) {
+		--color__background-body: #{$color__dd-background-body--dark};
+		--color__text-main: #{$color__dd-text-main--dark};
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body:not(.prefers-dark-theme) {
+		--color__background-body: #{$color__dd-background-body--light};
+		--color__text-main: #{$color__dd-text-main--light};
+	}
+}
+
+body.prefers-dark-theme {
+	--color__background-body: #{$color__dd-background-body--dark};
+	--color__text-main: #{$color__dd-text-main--dark};
+}
+
+body.prefers-light-theme {
+	--color__background-body: #{$color__dd-background-body--light};
+	--color__text-main: #{$color__dd-text-main--light};
+}
+
+body {
+	background-color: var(--color__background-body, #{$color__dd-background-body--light});
+	color: var(--color__text-main, #{$color__dd-text-main--light});
+}
+
+:root {
+	font-size: 18px;
+	line-height: 1.2;
+	
+	@media screen and (max-width: 1080px) {
+		font-size: 16px;
+	}
+}
+
+/* Block Library overrides */
+
+.has-small-font-size {
+	font-size: 0.8rem; // 14px 
+}
+  
+.has-regular-font-size,
+.has-normal-font-size {
+	font-size: 1rem; // 18px
+}
+  
+.has-medium-font-size {
+	font-size: 1.25rem; // 22.5px
+}
+  
+.has-large-font-size {
+	font-size: 1.563rem; // 28.125px
+}
+  
+.has-larger-font-size,
+.has-huge-font-size {
+	font-size: 1.953rem; // 35.156px
+}
+
+.site-content {
+	padding: 1rem;
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+.entry {
+	max-width: 36rem;
+
+	@media screen and (max-width: 960px) {
+		margin: 0;
+	}
+}
+
+.entry h1, .entry-title {
+	font-family: 'bely-display';
+	font-size: $font__size-xxl;
+}
+
+
+
+
+// /* Forms */
+
+// @import "sass/forms/forms";
+
+// /* Navigation */
+
+// @import "sass/navigation/navigation";
+
+
+// /* Alignments */
+
+// @import "sass/modules/alignments";
+
+// /* Clearings */
+
+// @import "sass/modules/clearings";
+
+// /* Layout */
+
+// @import "sass/layout/layout";
+
+// /* Content */
+
+// @import "sass/site/site";
+
+// /* Widgets */
+
+// @import "sass/site/secondary/widgets";
+
+
+// /* Media */
+
+// @import "sass/media/media";
