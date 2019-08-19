@@ -29,7 +29,8 @@ $colors: (
     90: #111
   ),
   'blue': color-scale($base-colors--blue),
-  'purple': color-scale(adjust-color($base-colors--blue, $hue: 90deg, $saturation: -21%)) 
+  'purple': color-scale(adjust-color($base-colors--blue, $hue: 90deg, $saturation: -21%)), 
+  'teal': color-scale(adjust-color($base-colors--blue, $hue: -30deg, $saturation: -14%)) 
 );
 
 @function get-color($color, $grade: 50) {
@@ -93,7 +94,7 @@ $theme-colors: (
     border-input: get-color('gray', 70),
     border-abbr: #666,
     featured-image-text: #fff,
-    featured-image-overlay: get-color('purple', 20)
+    featured-image-overlay: get-color('purple', 30)
   )
 );
 

@@ -541,7 +541,7 @@ body {
     --color__border-input: #494949;
     --color__border-abbr: #666;
     --color__featured-image-text: #fff;
-    --color__featured-image-overlay: #9b16b8;
+    --color__featured-image-overlay: #11e1bc;
   }
 }
 
@@ -602,7 +602,7 @@ body {
   --color__border-input: #494949;
   --color__border-abbr: #666;
   --color__featured-image-text: #fff;
-  --color__featured-image-overlay: #9b16b8;
+  --color__featured-image-overlay: #11e1bc;
 }
 
 /* Typography */
@@ -3100,7 +3100,7 @@ body.page .main-navigation {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 90vh;
+  min-height: 60vh;
 }
 
 .site-header.featured-image .site-branding-container {
@@ -3113,7 +3113,7 @@ body.page .main-navigation {
     padding: 3rem 0;
   }
   .site-header.featured-image {
-    min-height: 100vh;
+    min-height: 50vh;
     margin-bottom: 3rem;
   }
 }
