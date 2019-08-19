@@ -131,7 +131,7 @@
 	.trackback {
 
 		.comment-body {
-			color: $color__text-light;
+			color: theme-color(text-light);
 			@include font-family( $font__heading );
 			font-size: $font__size-xs;
 			font-weight: 500;
@@ -147,7 +147,7 @@
 			}
 
 			.comment-edit-link {
-				color: $color__text-light;
+				color: theme-color(text-light);
 				@include font-family( $font__heading );
 				font-weight: 500;
 			}
@@ -216,7 +216,7 @@
 				color: inherit;
 
 				&:hover {
-					color: $color__link-hover;
+					color: theme-color(link-hover);
 				}
 			}
 		}
@@ -226,7 +226,7 @@
 			display: block;
 			height: 18px;
 			position: absolute;
-			background: lighten( $color__link, 8% );
+			background: lighten( theme-color(link), 8% );
 			right: calc(100% - #{$size__spacing-unit * 2.5});
 			top: -3px;
 			width: 18px;
@@ -251,7 +251,7 @@
 		.comment-edit-link {
 			display: inline;
 			font-weight: 500;
-			color: $color__text-light;
+			color: theme-color(text-light);
 			vertical-align: baseline;
 
 			time {
@@ -259,7 +259,7 @@
 			}
 
 			&:hover {
-				color: $color__link-hover;
+				color: theme-color(link-hover);
 				text-decoration: none;
 			}
 		}
@@ -269,13 +269,13 @@
 		}
 
 		.edit-link-sep {
-			color: $color__text-light;
+			color: theme-color(text-light);
 			margin: 0 0.2em;
 			vertical-align: baseline;
 		}
 
 		.edit-link {
-			color: $color__text-light;
+			color: theme-color(text-light);
 
 			svg {
 				transform: scale(0.8);
@@ -291,7 +291,7 @@
 			z-index: 1;
 
 			&:hover {
-				color: $color__link;
+				color: theme-color(link);
 			}
 		}
 	}
@@ -331,7 +331,7 @@
 	font-weight: 500;
 
 	&:hover {
-		color: $color__link-hover;
+		color: theme-color(link-hover);
 	}
 }
 
@@ -379,7 +379,7 @@
 	label {
 		@include font-family( $font__heading );
 		font-size: $font__size-xs;
-		color: $color__text-light;
+		color: theme-color(text-light);
 	}
 
 	.comment-form-author,

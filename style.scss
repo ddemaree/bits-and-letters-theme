@@ -62,6 +62,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Accessibility */
 @import "sass/modules/accessibility";
 
+/* Theming */
+@import "sass/theming/theming";
+
 /* Typography */
 @import "sass/typography/typography";
 
@@ -72,42 +75,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "sass/blocks/blocks";
 
 
-/* FINALLY, MY STYLES */
-
-$color__dd-background-body--light: white;
-$color__dd-text-main--light: #1a1a1a;
-
-$color__dd-background-body--dark: #1a1a1a;
-$color__dd-text-main--dark: white;
-
-@media (prefers-color-scheme: dark) {
-	body:not(.prefers-light-theme) {
-		--color__background-body: #{$color__dd-background-body--dark};
-		--color__text-main: #{$color__dd-text-main--dark};
-	}
-}
-
-@media (prefers-color-scheme: light) {
-	body:not(.prefers-dark-theme) {
-		--color__background-body: #{$color__dd-background-body--light};
-		--color__text-main: #{$color__dd-text-main--light};
-	}
-}
-
-body.prefers-dark-theme {
-	--color__background-body: #{$color__dd-background-body--dark};
-	--color__text-main: #{$color__dd-text-main--dark};
-}
-
-body.prefers-light-theme {
-	--color__background-body: #{$color__dd-background-body--light};
-	--color__text-main: #{$color__dd-text-main--light};
-}
-
-body {
-	background-color: var(--color__background-body, #{$color__dd-background-body--light});
-	color: var(--color__text-main, #{$color__dd-text-main--light});
-}
 
 :root {
 	font-size: 18px;
@@ -121,7 +88,7 @@ body {
 /* Block Library overrides */
 
 .has-small-font-size {
-	font-size: 0.8rem; // 14px 
+	font-size: $font__size-sm;
 }
   
 .has-regular-font-size,
@@ -130,70 +97,67 @@ body {
 }
   
 .has-medium-font-size {
-	font-size: 1.25rem; // 22.5px
+	font-size: $font__size-md;
 }
   
 .has-large-font-size {
-	font-size: 1.563rem; // 28.125px
+	font-size: $font__size-lg;
 }
   
 .has-larger-font-size,
 .has-huge-font-size {
-	font-size: 1.953rem; // 35.156px
-}
-
-.site-content {
-	padding: 1rem;
-	max-width: 60rem;
-	margin: 0 auto;
-}
-
-.entry {
-	max-width: 36rem;
-
-	@media screen and (max-width: 960px) {
-		margin: 0;
-	}
-}
-
-.entry h1, .entry-title {
-	font-family: 'bely-display';
-	font-size: $font__size-xxl;
+	font-size: $font__size-xl;
 }
 
 
+// .entry {
+// 	max-width: 36rem;
+
+// 	@media screen and (max-width: 960px) {
+// 		margin: 0;
+// 	}
+// }
+
+// .entry h1, .entry-title {
+// 	// font-family: 'bely-display';
+// 	font-size: $font__size-xl;
+// }
 
 
-// /* Forms */
-
-// @import "sass/forms/forms";
-
-// /* Navigation */
-
-// @import "sass/navigation/navigation";
 
 
-// /* Alignments */
+/* Forms */
 
-// @import "sass/modules/alignments";
+@import "sass/forms/forms";
 
-// /* Clearings */
+/* Navigation */
 
-// @import "sass/modules/clearings";
-
-// /* Layout */
-
-// @import "sass/layout/layout";
-
-// /* Content */
-
-// @import "sass/site/site";
-
-// /* Widgets */
-
-// @import "sass/site/secondary/widgets";
+@import "sass/navigation/navigation";
 
 
-// /* Media */
+/* Alignments */
 
-// @import "sass/media/media";
+@import "sass/modules/alignments";
+
+/* Clearings */
+
+@import "sass/modules/clearings";
+
+/* Layout */
+
+@import "sass/layout/layout";
+
+/* Content */
+
+@import "sass/site/site";
+
+/* Widgets */
+
+@import "sass/site/secondary/widgets";
+
+
+/* Media */
+
+@import "sass/media/media";
+
+

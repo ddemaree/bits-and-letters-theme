@@ -10,6 +10,8 @@ Twenty Nineteen Editor Styles
  * a custom font that includes just a Hoefler Text space replacement for that
  * character instead.
  */
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i|IBM+Plex+Mono&display=swap");
+@import url("https://use.typekit.net/yax1qaz.css");
 @font-face {
   font-family: 'NonBreakingSpaceOverride';
   src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMoAA0AAAAACDQAAALTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACCahEICjx3CywAATYCJANUBCAFhiEHgWwbXQfILgpsY+rQRRARwyAs6uL7pxzYhxEE+32b3aeHmifR6tklkS9hiZA0ewkqGRJE+H7/+6378ASViK/PGeavqJyOzsceKi1s3BCiQsiOdn1r/RBgIJYEgCUhbm/8/8/h4saPssnTNkkiWUBrTRtjmQSajw3Ui3pZ3LYDPD+XG2C3JA/yKAS8/rU5eNfuGqRf4eNNgV4YAlIIgxglEkWe6FYpq10+wi3g+/nUgvgPFczNrz/RsTgVm/zfbPuHZlsuQECxuyqBcQwKFBjFgKO8AqP4bAN9tFJtnM9xPcbNjeXS/x1wY/xU52f5W/X1+9cnH4YwKIaoRRAkUkj/YlAAeF/624foiIDBgBmgQBeGAyhBljUPZUm/l2dTvmpqcBDUOHdbPZWd8JsBAsGr4w8/EDn82/bUPx4eh0YNrQTBuHO2FjQEAGBwK0DeI37DpQVqdERS4gZBhpeUhWCfLFz7J99aEBgsJCHvUGAdAPp4IADDCAPCEFMGpMZ9AQpTfQtQGhLbGVBZFV8BaqNyP68oTZgHNj3M8kBPfXTTC9t90UuzYhy9ciH0grVlOcqyCytisvbsERsEYztiznR0WCrmTksJwbSNK6fd1Rvr25I9oLvctUoEbNOmXJbqgYgPXEHJ82IUsrCnpkxh23F1rfZ2zcRnJYoXtauB3VTFkFXQg3uoZYD5qE0kdjDtoDoF1h2bulGmev5HbYhbrjtohQSRI4aNOkffIcT+d3v6atpaYh3JvPoQsztCcqvaBkppDSPcQ3bw3KaCBo1f5CJWTZEgW3LjLofYg51MaVezrx8xZitYbQ9KYeoRaqQdVLwSEfrKXLK1otCWOKNdR/YwYAfon5Yk8O2MJfSD10dPGA5PIJJQMkah0ugMJiv6x4Dm7LEa8xnrRGGGLAg4sAlbsA07sAt76DOsXKO3hIjtIlpnnFrt1qW4kh6NhS83P/6HB/fl1SMAAA==) format("woff2"), url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAUQAA0AAAAACDQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAE9AAAABwAAAAchf5yU0dERUYAAATYAAAAHAAAAB4AJwAbT1MvMgAAAaAAAABJAAAAYJAcgU5jbWFwAAACIAAAAF4AAAFqUUxBZ2dhc3AAAATQAAAACAAAAAgAAAAQZ2x5ZgAAApAAAAAyAAAAPL0n8y9oZWFkAAABMAAAADAAAAA2Fi93Z2hoZWEAAAFgAAAAHQAAACQOSgWaaG10eAAAAewAAAAzAAAAVC7TAQBsb2NhAAACgAAAABAAAAAsAOQBAm1heHAAAAGAAAAAHQAAACAAWQALbmFtZQAAAsQAAAF6AAADIYvD/Adwb3N0AAAEQAAAAI4AAADsapk2o3jaY2BkYGAA4ov5mwzj+W2+MnCzXwCKMNzgCBSB0LfbQDQ7AxuI4mBgAlEAFKQIRHjaY2BkYGD3+NvCwMDBAALsDAyMDKhAFAA3+wH3AAAAeNpjYGRgYBBl4GBgYgABEMnIABJzAPMZAAVmAGUAAAB42mNgZlJhnMDAysDCKsKygYGBYRqEZtrDYMT4D8gHSmEHjgUFOQwODAqqf9g9/rYwMLB7MNUAhRlBcsxBrMlASoGBEQAj8QtyAAAAeNrjYGBkAAGmWQwMjO8gmBnIZ2NA0ExAzNjAAFYJVn0ASBsD6VAIDZb7AtELAgANIgb9AHjaY2BgYGaAYBkGRgYQSAHyGMF8FgYPIM3HwMHAxMDGoMCwQIFLQV8hXvXP//9AcRCfAcb///h/ygPW+w/vb7olBjUHCTCyMcAFGZmABBO6AogThgZgIUsXAEDcEzcAAHjaY2BgECMCyoEgACZaAed42mNgYmRgYGBnYGNgYAZSDJqMgorCgoqCjECRXwwNrCAKSP5mAAFGBiRgyAAAi/YFBQAAeNqtkc1OwkAUhU/5M25cEhcsZick0AwlBJq6MWwgJkAgYV/KAA2lJeUn+hY+gktXvpKv4dLTMqKycGHsTZNv7px7z50ZAFd4hYHjdw1Ls4EiHjVncIFnzVnc4F1zDkWjrzmPW+NNcwGlzIRKI3fJlUyrEjZQxb3mDH2fNGfRx4vmHKqG0JzHg6E0F9DOlFBGBxUI1GEzLNT4S0aLuTtsGAEUuYcQHkyg3KmIum1bNUvKlrjbbAIleqHHnS4iSudpQcySMYtdFiXlAxzSbAwfMxK6kZoHKhbjjespMTioOPZnzI+4ucCeTVyKMVKLfeAS6vSWaTinuZwzyy/Dc7vaed+6KaV0kukdPUk6yOcctZPvvxxqksq2lEW8RvHjMEO2FCl/zy6p3NEm0R9OFSafJdldc4QVeyaaObMBO0/5cCaa6d9Ggyubxire+lEojscdjoWUR1xGOy8KD8mG2ZLO2l2paDc3A39qmU2z2W5YNv5+u79e6QfGJY/hAAB42m3NywrCMBQE0DupWp/1AYI7/6DEaLQu66Mrd35BKUWKJSlFv1+rue4cGM7shgR981qSon+ZNwUJ8iDgoYU2OvDRRQ99DDDECAHGmGCKmf80hZSx/Kik/LliFbtmN6xmt+yOjdg9GztV4tROnRwX/Bsaaw51nt4Lc7tWaZYHp/MlzKx51LZs5htNri+2AAAAAQAB//8AD3jaY2BkYGDgAWIxIGZiYARCESBmAfMYAAR6AEMAAAABAAAAANXtRbgAAAAA2AhRFAAAAADYCNuG) format("woff");
@@ -21,7 +23,6 @@ Twenty Nineteen Editor Styles
 /* Calculates maximum width for post content */
 /* Nested sub-menu padding: 10 levels deep */
 /* Ensure all font family declarations come with non-latin fallbacks */
-/* Build our non-latin font styles */
 /** === Editor Frame === */
 body .wp-block[data-align="full"] {
   width: 100%;
@@ -83,14 +84,14 @@ body .wp-block[data-align="full"] {
 
 /** === Base Typography === */
 body {
-  font-size: 22px;
+  font-size: 18px;
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  line-height: 1.8;
-  color: #111;
+  line-height: 1.6;
+  color: var(--color__text-main, #111);
 }
 
 p {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 h1,
@@ -104,11 +105,11 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25em;
+  font-size: 2.5em;
 }
 
 h1:before {
-  background: #767676;
+  background: var(--color__text-light, #767676);
   content: "\020";
   display: block;
   height: 2px;
@@ -118,16 +119,16 @@ h1:before {
 
 @media only screen and (min-width: 768px) {
   h1 {
-    font-size: 2.8125em;
+    font-size: 3.125em;
   }
 }
 
 h2 {
-  font-size: 1.6875em;
+  font-size: 1.875em;
 }
 
 h2:before {
-  background: #767676;
+  background: var(--color__text-light, #767676);
   content: "\020";
   display: block;
   height: 2px;
@@ -137,33 +138,33 @@ h2:before {
 
 @media only screen and (min-width: 768px) {
   h2 {
-    font-size: 2.25em;
+    font-size: 2.5em;
   }
 }
 
 h3 {
-  font-size: 1.6875em;
+  font-size: 1.875em;
 }
 
 h4 {
-  font-size: 1.125em;
+  font-size: 1.25em;
 }
 
 h5 {
-  font-size: 0.88889em;
+  font-size: 0.8em;
 }
 
 h6 {
-  font-size: 0.71111em;
+  font-size: 0.64em;
 }
 
 a {
   transition: color 110ms ease-in-out;
-  color: #0073aa;
+  color: var(--color__link, #0073aa);
 }
 
 a:hover, a:active {
-  color: #005177;
+  color: var(--color__link-hover, #004363);
   outline: 0;
   text-decoration: none;
 }
@@ -177,7 +178,7 @@ a:focus {
 .has-secondary-background-color,
 .has-dark-gray-background-color,
 .has-light-gray-background-color {
-  color: #fff;
+  color: var(--color__background-body, #fff);
 }
 
 .has-primary-background-color p,
@@ -212,11 +213,11 @@ a:focus {
 .has-light-gray-background-color h5,
 .has-light-gray-background-color h6,
 .has-light-gray-background-color a {
-  color: #fff;
+  color: var(--color__background-body, #fff);
 }
 
 .has-white-background-color {
-  color: #111;
+  color: var(--color__text-main, #111);
 }
 
 .has-white-background-color p,
@@ -227,20 +228,20 @@ a:focus {
 .has-white-background-color h5,
 .has-white-background-color h6,
 .has-white-background-color a {
-  color: #111;
+  color: var(--color__text-main, #111);
 }
 
 figcaption,
 .gallery-caption {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.71111em;
+  font-size: 0.64em;
   line-height: 1.6;
-  color: #767676;
+  color: var(--color__text-light, #767676);
 }
 
 /** === Post Title === */
 .editor-post-title__block:before {
-  background: #767676;
+  background: var(--color__text-light, #767676);
   content: "\020";
   display: block;
   height: 2px;
@@ -249,7 +250,7 @@ figcaption,
 }
 
 .editor-post-title__block:before {
-  width: 2.8125em;
+  width: 3.125em;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 1em;
@@ -259,14 +260,14 @@ figcaption,
 
 .editor-post-title__block .editor-post-title__input {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 2.8125em;
+  font-size: 3.125em;
   font-weight: 700;
 }
 
 /** === Default Appender === */
 .editor-default-block-appender .editor-default-block-appender__content {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 /** === Heading === */
@@ -277,7 +278,7 @@ figcaption,
 /** === Paragraph === */
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 3.375em;
+  font-size: 3.75em;
   line-height: 1;
   font-weight: bold;
   margin: 0 0.25em 0 0;
@@ -292,7 +293,7 @@ figcaption,
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-text {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.6875em;
+  font-size: 1.875em;
   font-weight: bold;
   line-height: 1.4;
   padding-left: 1rem;
@@ -320,7 +321,7 @@ figcaption,
   }
   .wp-block-cover h2,
   .wp-block-cover .wp-block-cover-text {
-    font-size: 2.25em;
+    font-size: 2.5em;
   }
 }
 
@@ -378,7 +379,7 @@ figcaption,
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption,
 .wp-block-gallery .gallery-item .gallery-caption {
-  font-size: 0.71111em;
+  font-size: 0.64em;
   line-height: 1.6;
 }
 
@@ -386,12 +387,12 @@ figcaption,
 .wp-block-button .wp-block-button__link {
   line-height: 1.8;
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.88889em;
+  font-size: 0.8em;
   font-weight: bold;
 }
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link {
-  background: #0073aa;
+  background: var(--color__background-button, #0073aa);
 }
 
 .wp-block-button:not(.is-style-squared) .wp-block-button__link {
@@ -400,7 +401,7 @@ figcaption,
 
 .wp-block-button.is-style-outline, .wp-block-button.is-style-outline:hover, .wp-block-button.is-style-outline:focus, .wp-block-button.is-style-outline:active {
   background: transparent;
-  color: #0073aa;
+  color: var(--color__background-button, #0073aa);
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link, .wp-block-button.is-style-outline:hover .wp-block-button__link, .wp-block-button.is-style-outline:focus .wp-block-button__link, .wp-block-button.is-style-outline:active .wp-block-button__link {
@@ -408,23 +409,23 @@ figcaption,
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color), .wp-block-button.is-style-outline:hover .wp-block-button__link:not(.has-text-color), .wp-block-button.is-style-outline:focus .wp-block-button__link:not(.has-text-color), .wp-block-button.is-style-outline:active .wp-block-button__link:not(.has-text-color) {
-  color: #0073aa;
+  color: var(--color__background-button, #0073aa);
 }
 
 /** === Blockquote === */
 .wp-block-quote:not(.is-large):not(.is-style-large) {
   border-width: 2px;
-  border-color: #0073aa;
+  border-color: var(--color__link, #0073aa);
 }
 
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
-  margin-top: 2.8125em;
-  margin-bottom: 2.8125em;
+  margin-top: 3.125em;
+  margin-bottom: 3.125em;
 }
 
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
-  font-size: 1.6875em;
+  font-size: 1.875em;
   line-height: 1.3;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
@@ -434,9 +435,9 @@ figcaption,
 .wp-block-quote footer,
 .wp-block-quote .wp-block-quote__citation {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.71111em;
+  font-size: 0.64em;
   line-height: 1.6;
-  color: #767676;
+  color: var(--color__text-light, #767676);
 }
 
 /** === Pullquote === */
@@ -454,7 +455,7 @@ figcaption,
 }
 
 .wp-block-pullquote:not(.is-style-solid-color) .wp-block-pullquote__citation {
-  color: #767676;
+  color: var(--color__text-light, #767676);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
@@ -469,7 +470,7 @@ figcaption,
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) {
-  color: #fff;
+  color: var(--color__background-body, #fff);
 }
 
 @media only screen and (min-width: 768px) {
@@ -479,7 +480,7 @@ figcaption,
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
-  background-color: #0073aa;
+  background-color: var(--color__link, #0073aa);
 }
 
 .wp-block[data-type="core/pullquote"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
@@ -491,7 +492,7 @@ figcaption,
 .wp-block[data-type="core/pullquote"][data-align="right"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
 .wp-block[data-type="core/pullquote"][data-align="right"] blockquote > .editor-rich-text p,
 .wp-block[data-type="core/pullquote"][data-align="right"] p {
-  font-size: 1.6875em;
+  font-size: 1.875em;
   font-style: italic;
   line-height: 1.3;
   margin-bottom: 0.5em;
@@ -508,7 +509,7 @@ figcaption,
   .wp-block[data-type="core/pullquote"][data-align="right"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
   .wp-block[data-type="core/pullquote"][data-align="right"] blockquote > .editor-rich-text p,
   .wp-block[data-type="core/pullquote"][data-align="right"] p {
-    font-size: 2.25em;
+    font-size: 2.5em;
   }
 }
 
@@ -516,7 +517,7 @@ figcaption,
 .wp-block[data-type="core/pullquote"][data-align="left"] .wp-block-pullquote__citation,
 .wp-block[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citation {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.71111em;
+  font-size: 0.64em;
   line-height: 1.6;
   text-transform: none;
 }
@@ -567,20 +568,20 @@ figcaption,
 
 .wp-block-file .wp-block-file__textlink {
   text-decoration: underline;
-  color: #0073aa;
+  color: var(--color__link, #0073aa);
 }
 
 .wp-block-file .wp-block-file__textlink:hover {
-  color: #005177;
+  color: var(--color__link-hover, #004363);
   text-decoration: none;
 }
 
 .wp-block-file .wp-block-file__button {
   display: table;
   line-height: 1.8;
-  font-size: 0.88889em;
+  font-size: 0.8em;
   font-weight: bold;
-  background-color: #0073aa;
+  background-color: var(--color__link, #0073aa);
   border-radius: 5px;
 }
 
@@ -603,22 +604,22 @@ figcaption,
 
 /** === Table === */
 .wp-block-table td, .wp-block-table th {
-  border-color: #767676;
+  border-color: var(--color__text-light, #767676);
 }
 
 /** === Separator === */
 .wp-block-separator:not(.is-style-dots) {
-  border-bottom: 2px solid #767676;
+  border-bottom: 2px solid var(--color__text-light, #767676);
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-  width: 2.25em;
+  width: 2.5em;
   margin-left: 0;
 }
 
 .wp-block-separator.is-style-dots:before {
-  color: #767676;
-  font-size: 1.6875em;
+  color: var(--color__text-light, #767676);
+  font-size: 1.875em;
   letter-spacing: calc(2 * 1rem);
   padding-left: calc(2 * 1rem);
 }
@@ -648,9 +649,9 @@ ul.wp-block-archives ul,
 ul.wp-block-archives li,
 .wp-block-categories li,
 .wp-block-latest-posts li {
-  color: #767676;
+  color: var(--color__text-light, #767676);
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: calc(22px * 1.125);
+  font-size: calc(18px * 1.25);
   font-weight: bold;
   line-height: 1.2;
   padding-bottom: 0.75rem;
@@ -699,7 +700,7 @@ ul.wp-block-archives li ul,
 
 /** === Latest Posts grid view === */
 .wp-block-latest-posts.is-grid li {
-  border-top: 2px solid #ccc;
+  border-top: 2px solid var(--color__border, #ccc);
   padding-top: 1rem;
   margin-bottom: 2rem;
 }
@@ -733,14 +734,14 @@ ul.wp-block-archives li ul,
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
-  font-size: 0.71111em;
+  font-size: 0.64em;
 }
 
 /** === Classic Editor === */
 /* Properly center-align captions in the classic-editor block */
 .wp-caption dd {
-  color: #767676;
-  font-size: 0.71111em;
+  color: var(--color__text-light, #767676);
+  font-size: 0.64em;
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -756,13 +757,13 @@ ul.wp-block-archives li ul,
 }
 
 .wp-block-freeform blockquote {
-  border-left: 2px solid #0073aa;
+  border-left: 2px solid var(--color__link, #0073aa);
 }
 
 .wp-block-freeform blockquote cite {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.71111em;
+  font-size: 0.64em;
   font-style: normal;
   line-height: 1.6;
-  color: #767676;
+  color: var(--color__text-light, #767676);
 }

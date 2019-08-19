@@ -15,14 +15,6 @@ $discussion = ! is_page() && bitsandletters_can_show_post_thumbnail() ? bitsandl
 <div class="entry-meta">
 	<?php bitsandletters_posted_by(); ?>
 	<?php bitsandletters_posted_on(); ?>
-	<span class="comment-count">
-		<?php
-		if ( ! empty( $discussion ) ) {
-			bitsandletters_discussion_avatars_list( $discussion->authors );
-		}
-		?>
-		<?php bitsandletters_comment_count(); ?>
-	</span>
 	<?php
 	// Edit post link.
 		edit_post_link(

@@ -1,0 +1,68 @@
+
+// Theming
+
+/* FINALLY, MY STYLES */
+
+@mixin theme-color-css-vars($theme: light) {
+  $__colors: map-get($theme-colors, $theme);
+  
+  @each $color-name, $color-value in $__colors {
+    --color__#{$color-name}: #{$color-value};
+  }
+}
+
+body {  
+  @include theme-color-css-vars(light);
+
+  @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+    @include theme-color-css-vars(light);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include theme-color-css-vars(dark);
+  }
+}
+
+.prefers-light-theme {
+  @include theme-color-css-vars(light);
+}
+
+.prefers-dark-theme {
+  @include theme-color-css-vars(dark);
+}
+
+
+// theme-color(dd-background-body--light): white;
+// theme-color(dd-text-main--light): #1a1a1a;
+
+// theme-color(dd-background-body--dark): #1a1a1a;
+// theme-color(dd-text-main--dark): white;
+
+// @media (prefers-color-scheme: dark) {
+// 	body:not(.prefers-light-theme) {
+// 		--color__background-body: #{theme-color(dd-background-body--dark)};
+// 		--color__text-main: #{theme-color(dd-text-main--dark)};
+// 	}
+// }
+
+// @media (prefers-color-scheme: light) {
+// 	body:not(.prefers-dark-theme) {
+// 		--color__background-body: #{theme-color(dd-background-body--light)};
+// 		--color__text-main: #{theme-color(dd-text-main--light)};
+// 	}
+// }
+
+// body.prefers-dark-theme {
+// 	--color__background-body: #{theme-color(dd-background-body--dark)};
+// 	--color__text-main: #{theme-color(dd-text-main--dark)};
+// }
+
+// body.prefers-light-theme {
+// 	--color__background-body: #{theme-color(dd-background-body--light)};
+// 	--color__text-main: #{theme-color(dd-text-main--light)};
+// }
+
+// body {
+// 	background-color: var(--color__background-body, #{theme-color(dd-background-body--light)});
+// 	color: var(--color__text-main, #{theme-color(dd-text-main--light)});
+// }

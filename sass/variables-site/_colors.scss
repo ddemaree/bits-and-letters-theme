@@ -1,35 +1,106 @@
+$base-colors--blue: #0073aa;
 
+@function color-scale($base-color) {
+  @return (
+    10: lighten($base-color, 28%),  
+    20: lighten($base-color, 21%),  
+    30: lighten($base-color, 14%),
+    40: lighten($base-color, 7%),
+    50: $base-color,
+    60: darken($base-color, 7%), 
+    70: darken($base-color, 14%), 
+    80: darken($base-color, 21%),
+    90: darken($base-color, 28%) 
+  )
+}
 
-// Backgrounds
-$color__background-body: #fff;
-$color__background-input: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #0073aa;
-$color__background-button-hover: #111;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
-$color__background_selection: mix( $color__background-body, $color__background-button, 75% ); // lighten( salmon, 22.5% ); // lighten( #0999d4, 48% );
+$colors: (
+  'white': #fff,
+  'black': #000,
+  'gray': (
+    10: #f2f2f2,
+    20: #d6d6d6,
+    30: #bababa,
+    40: #9e9e9e,
+    50: #828282,
+    60: #666,
+    70: #494949,
+    80: #2d2d2d,
+    90: #111
+  ),
+  'blue': color-scale($base-colors--blue),
+  'purple': color-scale(adjust-color($base-colors--blue, $hue: 90deg, $saturation: -21%)) 
+);
 
-// Text
-$color__text-main: #111;
-$color__text-light: #767676;
-$color__text-hover: lighten( #111, 22.5% );
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
+@function get-color($color, $grade: 50) {
+  @return map-get(map-get($colors, $color), $grade);
+}
 
-// Links
-$color__link: #0073aa;
-$color__link-visited: #0073aa;
-$color__link-hover: darken( $color__link, 10% );
+$theme-colors: (
+  'light': (
+    background-body: #fff,
+    background-input: #fff,
+    background-screen: #f1f1f1,
+    background-hr: #ccc,
+    background-button: get-color('blue', 50),
+    background-button-hover: get-color('blue', 70),
+    background-pre: #eee,
+    background-ins: #fff9c0,
+    text-main: #111,
+    text-light: #767676,
+    text-hover: lighten( #111, 22.5% ),
+    text-screen: #21759b,
+    text-input: #666,
+    text-input-focus: #111,
+    link: get-color('blue', 50),
+    link-visited: get-color('blue', 50),
+    link-hover: get-color('blue', 70),
+    border: #ccc,
+    border-link: #0073aa,
+    border-link-hover: get-color('blue', 70),
+    border-button: #ccc #ccc #bbb,
+    border-button-hover: #ccc #bbb #aaa,
+    border-button-focus: #aaa #bbb #bbb,
+    border-input: border,
+    border-abbr: #666,
+    featured-image-text: #fff,
+    featured-image-overlay: get-color('blue', 50)
+  ),
+  'dark': (
+    background-body: get-color('gray', 90),
+    background-input: get-color('gray', 90),
+    background-screen: #f1f1f1,
+    background-hr: #ccc,
+    background-button: get-color('blue', 30),
+    background-button-hover: get-color('blue', 40),
+    background-pre: #eee,
+    background-ins: #fff9c0,
+    text-main: white,
+    text-light: get-color('gray', 50),
+    text-hover: lighten( #111, 22.5% ),
+    text-screen: #21759b,
+    text-input: #666,
+    text-input-focus: #111,
+    link: get-color('blue', 30),
+    link-visited: get-color('purple', 30),
+    link-hover: get-color('blue', 50),
+    border: get-color('gray', 70),
+    border-link: #0073aa,
+    border-link-hover: get-color('blue', 70),
+    border-button: #ccc #ccc #bbb,
+    border-button-hover: #ccc #bbb #aaa,
+    border-button-focus: #aaa #bbb #bbb,
+    border-input: get-color('gray', 70),
+    border-abbr: #666,
+    featured-image-text: #fff,
+    featured-image-overlay: get-color('purple', 20)
+  )
+);
 
-// Borders
-$color__border: #ccc;
-$color__border-link: #0073aa;
-$color__border-link-hover: darken( $color__link, 10% );
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: $color__border;
-$color__border-abbr: #666;
+@function get-theme-color($name) {
+  @return map-get(map-get($theme-colors, light), $name);
+}
+
+@function theme-color($name) {
+	@return var(--color__#{$name}, get-theme-color($name));
+}

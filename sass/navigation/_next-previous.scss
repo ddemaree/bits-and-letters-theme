@@ -34,7 +34,7 @@
 
 		a {
 			.meta-nav {
-				color: $color__text-light;
+				color: theme-color(text-light);
 				user-select: none;
 
 				&:before,
@@ -42,7 +42,7 @@
 					display: none;
 					content: "—";
 					width: 2em;
-					color: $color__text-light;
+					color: theme-color(text-light);
 					height: 1em;
 				}
 			}
@@ -52,7 +52,7 @@
 			}
 
 			&:hover {
-				color: $color__link-hover;
+				color: theme-color(link-hover);
 			}
 		}
 

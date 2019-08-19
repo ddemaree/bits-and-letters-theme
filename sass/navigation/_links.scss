@@ -1,15 +1,15 @@
 a {
 
 	@include link-transition;
-	color: $color__link;
+	color: theme-color(link);
 
 	&:visited {
-		color: $color__link-visited;
+		color: theme-color(link-visited);
 	}
 
 	&:hover,
 	&:active {
-		color: $color__link-hover;
+		color: theme-color(link-hover);
 		outline: 0;
 		text-decoration: none;
 	}

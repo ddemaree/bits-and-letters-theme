@@ -29,7 +29,7 @@
 	}
 
 	.site-info {
-		color: $color__text-light;
+		color: theme-color(text-light);
 		-webkit-hyphens: auto;
 		-moz-hyphens: auto;
 		-ms-hyphens: auto;
@@ -41,7 +41,7 @@
 
 			&:hover {
 				text-decoration: none;
-				color: $color__link;
+				color: theme-color(link);
 			}
 		}
 

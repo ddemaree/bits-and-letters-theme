@@ -170,7 +170,7 @@
 			outline: none;
 
 			&:not(.has-background) {
-				background-color: $color__background-button;
+				background-color: theme-color(background-button);
 			}
 
 			&:not(.has-text-color) {
@@ -179,13 +179,13 @@
 
 			&:hover {
 				color: white;
-				background: $color__background-button-hover;
+				background: theme-color(background-button-hover);
 				cursor: pointer;
 			}
 
 			&:focus {
 				color: white;
-				background: $color__background-button-hover;
+				background: theme-color(background-button-hover);
 				outline: thin dotted;
 				outline-offset: -4px;
 			}
@@ -207,16 +207,16 @@
 			}
 
 			&:not(.has-text-color) {
-				color: $color__background-button;
+				color: theme-color(background-button);
 				border-color: currentColor;
 			}
 		}
 
 		&.is-style-outline .wp-block-button__link:hover {
 			color: white;
-			border-color: $color__background-button-hover;
+			border-color: theme-color(background-button-hover);
 			&:not(.has-background) {
-				color: $color__background-button-hover;
+				color: theme-color(background-button-hover);
 			}
 		}
 	}
@@ -229,7 +229,7 @@
 		list-style: none;
 
 		li {
-			color: $color__text-light;
+			color: theme-color(text-light);
 			@include font-family( $font__heading );
 			font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 			font-weight: bold;
@@ -273,7 +273,7 @@
 	//! Latest posts grid view
 	.wp-block-latest-posts.is-grid {
 		li {
-			border-top: 2px solid $color__border;
+			border-top: 2px solid theme-color(border);
 			padding-top: (1 * $size__spacing-unit);
 			margin-bottom: (2 * $size__spacing-unit);
 			a {
@@ -322,7 +322,7 @@
 		padding: $size__spacing-unit;
 
 		blockquote {
-			color: $color__text-main;
+			color: theme-color(text-main);
 			border: none;
 			margin-top: calc(4 * #{ $size__spacing-unit});
 			margin-bottom: calc(4.33 * #{ $size__spacing-unit});
@@ -351,7 +351,7 @@
 			@include font-family( $font__heading );
 			line-height: 1.6;
 			text-transform: none;
-			color: $color__text-light;
+			color: theme-color(text-light);
 
 			/*
 			 * This requires a rem-based font size calculation instead of our normal em-based one,
@@ -378,7 +378,7 @@
 		}
 
 		&.is-style-solid-color {
-			background-color: $color__link;
+			background-color: theme-color(link);
 			padding-left: 0;
 			padding-right: 0;
 
@@ -399,7 +399,7 @@
 			}
 
 			a {
-				color: $color__background-body;
+				color: theme-color(background-body);
 			}
 
 			cite {
@@ -408,7 +408,7 @@
 
 			blockquote {
 				max-width: 100%;
-				color: $color__background-body;
+				color: theme-color(background-body);
 				padding-left: 0;
 				margin-left: $size__spacing-unit;
 				margin-right: $size__spacing-unit;
@@ -453,7 +453,7 @@
 		&:not(.is-large),
 		&:not(.is-style-large) {
 			border-width: 2px;
-			border-color: $color__link;
+			border-color: theme-color(link);
 			padding-top: 0;
 			padding-bottom: 0;
 		}
@@ -635,7 +635,7 @@
 	//! Separator
 	.wp-block-separator,
 	hr {
-		background-color: $color__text-light;
+		background-color: theme-color(text-light);
 		border: 0;
 		height: 2px;
 		margin-bottom: (2 * $size__spacing-unit);
@@ -657,7 +657,7 @@
 			text-align: center;
 
 			&:before {
-				color: $color__text-light;
+				color: theme-color(text-light);
 				font-size: $font__size-lg;
 				letter-spacing: $font__size-sm;
 				padding-left: $font__size-sm;
@@ -685,7 +685,7 @@
 
 		th,
 		td {
-			border-color: $color__text-light;
+			border-color: theme-color(text-light);
 		}
 	}
 
@@ -698,7 +698,7 @@
 			@include button-transition;
 			border: none;
 			border-radius: 5px;
-			background: $color__background-button;
+			background: theme-color(background-button);
 			font-size: $font__size-base;
 			@include font-family( $font__heading );
 			line-height: $font__line-height-heading;
@@ -715,12 +715,12 @@
 			}
 
 			&:hover {
-				background: $color__background-button-hover;
+				background: theme-color(background-button-hover);
 				cursor: pointer;
 			}
 
 			&:focus {
-				background: $color__background-button-hover;
+				background: theme-color(background-button-hover);
 				outline: thin dotted;
 				outline-offset: -4px;
 			}
@@ -819,7 +819,7 @@
 	.has-light-gray-background-color {
 
 		// Use white text against these backgrounds by default.
-		color: $color__background-body;
+		color: theme-color(background-body);
 
 		> p,
 		> h1,
@@ -829,12 +829,12 @@
 		> h5,
 		> h6,
 		> a {
-			color: $color__background-body;
+			color: theme-color(background-body);
 		}
 	}
 
 	.has-white-background-color {
-		color: $color__text-main;
+		color: theme-color(text-main);
 
 		// Use dark gray text against this background by default.
 		> p,
@@ -845,28 +845,28 @@
 		> h5,
 		> h6,
 		> a {
-			color: $color__text-main;
+			color: theme-color(text-main);
 		}
 	}
 
 	.has-primary-background-color,
 	.wp-block-pullquote.is-style-solid-color.has-primary-background-color {
-		background-color: $color__link;
+		background-color: theme-color(link);
 	}
 
 	.has-secondary-background-color,
 	.wp-block-pullquote.is-style-solid-color.has-secondary-background-color {
-		background-color: $color__border-link-hover;
+		background-color: theme-color(border-link-hover);
 	}
 
 	.has-dark-gray-background-color,
 	.wp-block-pullquote.is-style-solid-color.has-dark-gray-background-color {
-		background-color: $color__text-main;
+		background-color: theme-color(text-main);
 	}
 
 	.has-light-gray-background-color,
 	.wp-block-pullquote.is-style-solid-color.has-light-gray-background-color {
-		background-color: $color__text-light;
+		background-color: theme-color(text-light);
 	}
 
 	.has-white-background-color,
@@ -878,25 +878,25 @@
 	.has-primary-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-primary-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-primary-color > p {
-		color: $color__link;
+		color: theme-color(link);
 	}
 
 	.has-secondary-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color > p {
-		color: $color__border-link-hover;
+		color: theme-color(border-link-hover);
 	}
 
 	.has-dark-gray-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color > p {
-		color: $color__text-main;
+		color: theme-color(text-main);
 	}
 
 	.has-light-gray-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color > p {
-		color: $color__text-light;
+		color: theme-color(text-light);
 	}
 
 	.has-white-color,

@@ -10,7 +10,7 @@
 
 	.page-title {
 
-		color: $color__text-light;
+		color: theme-color(text-light);
 		display: inline;
 		letter-spacing: normal;
 
@@ -27,14 +27,14 @@
 		&:after {
 			content: ".";
 			font-weight: bold;
-			color: $color__text-light;
+			color: theme-color(text-light);
 		}
 	}
 }
 
 .archive .page-header .page-description {
 	display: block;
-	color: $color__text-main;
+	color: theme-color(text-main);
 	font-size: 1em;
 }
 

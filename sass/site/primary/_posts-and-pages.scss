@@ -3,7 +3,7 @@
 }
 
 .sticky-post {
-	background: $color__background-button;
+	background: theme-color(background-button);
 	color: #fff;
 	display: inline-block;
 	font-weight: bold;
@@ -51,7 +51,7 @@
 			color: inherit;
 
 			&:hover {
-				color: $color__text-hover;
+				color: theme-color(text-hover);
 			}
 		}
 	}
@@ -59,7 +59,7 @@
 	.entry-meta,
 	.entry-footer {
 
-		color: $color__text-light;
+		color: theme-color(text-light);
 		font-weight: 500;
 
 		> span {
@@ -79,7 +79,7 @@
 
 			&:hover {
 				text-decoration: none;
-				color: $color__link;
+				color: theme-color(link);
 			}
 		}
 
@@ -205,7 +205,7 @@
 			}
 
 			&:hover {
-				color: $color__link;
+				color: theme-color(link);
 				text-decoration: none;
 			}
 		}
@@ -223,8 +223,8 @@
 			}
 
 			&.button:hover {
-				background: $color__background-button-hover;
-				color: $color__background-body;
+				background: theme-color(background-button-hover);
+				color: theme-color(background-body);
 				cursor: pointer;
 			}
 		}
@@ -288,7 +288,7 @@
 	.author-description {
 
 		display: inline;
-		color: $color__text-light;
+		color: theme-color(text-light);
 		font-size: $font__size-md;
 		line-height: $font__line-height-heading;
 
@@ -296,7 +296,7 @@
 			display: inline-block;
 
 			&:hover {
-				color: $color__link-hover;
+				color: theme-color(link-hover);
 				text-decoration: none;
 			}
 		}

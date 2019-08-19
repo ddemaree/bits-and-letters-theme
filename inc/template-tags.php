@@ -107,10 +107,10 @@ if ( ! function_exists( 'bitsandletters_entry_footer' ) ) :
 			}
 		}
 
-		// Comment count.
-		if ( ! is_singular() ) {
-			bitsandletters_comment_count();
-		}
+		// // Comment count.
+		// if ( ! is_singular() ) {
+		// 	bitsandletters_comment_count();
+		// }
 
 		// Edit post link.
 		edit_post_link(

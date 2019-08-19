@@ -55,14 +55,14 @@
 
 		> li {
 
-			color: $color__link;
+			color: theme-color(link);
 			display: inline;
 			position: relative;
 
 			> a {
 
 				font-weight: 700;
-				color: $color__link;
+				color: theme-color(link);
 				margin-right: #{0.5 * $size__spacing-unit};
 
 				+ svg {
@@ -71,7 +71,7 @@
 
 				&:hover,
 				&:hover + svg {
-					color: $color__link-hover;
+					color: theme-color(link-hover);
 				}
 			}
 
@@ -141,8 +141,8 @@
 
 	.sub-menu {
 
-		background-color: $color__link;
-		color: $color__background-body;
+		background-color: theme-color(link);
+		color: theme-color(background-body);
 		list-style: none;
 		padding-left: 0;
 
@@ -200,7 +200,7 @@
 			> a,
 			> .menu-item-link-return {
 
-				color: $color__background-body;
+				color: theme-color(background-body);
 				display: block;
 				line-height: $font__line-height-heading;
 				text-shadow: none;
@@ -209,10 +209,10 @@
 
 				&:hover,
 				&:focus {
-					background: $color__link-hover;
+					background: theme-color(link-hover);
 
 					&:after {
-						background: $color__link-hover;
+						background: theme-color(link-hover);
 					}
 				}
 			}

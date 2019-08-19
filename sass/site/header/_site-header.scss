@@ -29,7 +29,7 @@
 
 .site-branding {
 
-	color: $color__text-light;
+	color: theme-color(text-light);
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	-ms-hyphens: auto;
@@ -90,18 +90,18 @@
 .site-title {
 	margin: auto;
 	display: inline;
-	color: $color__text-main;
+	color: theme-color(text-main);
 
 	a {
-		color: $color__text-main;
+		color: theme-color(text-main);
 
 		&:link,
 		&:visited {
-			color: $color__text-main;
+			color: theme-color(text-main);
 		}
 
 		&:hover {
-			color: $color__text-hover;
+			color: theme-color(text-hover);
 		}
 	}
 
@@ -133,7 +133,7 @@
 .site-description {
 
 	display: inline;
-	color: $color__text-light;
+	color: theme-color(text-light);
 	font-weight: normal;
 	margin: 0;
 }

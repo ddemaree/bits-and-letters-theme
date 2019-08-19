@@ -7,10 +7,10 @@
 	}
 
 	a {
-		color: $color__link;
+		color: theme-color(link);
 
 		&:hover {
-			color: $color__link-hover;
+			color: theme-color(link-hover);
 		}
 	}
 }
@@ -29,7 +29,7 @@
 		list-style: none;
 
 		li {
-			color: $color__text-light;
+			color: theme-color(text-light);
 			@include font-family( $font__heading );
 			font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 			font-weight: 700;

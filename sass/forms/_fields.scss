@@ -15,8 +15,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	-webkit-backface-visibility: hidden;
-	background: $color__background-input;
-	border: solid 1px $color__border;
+	background: theme-color(background-input);
+	border: solid 1px theme-color(border);
 	box-sizing: border-box;
 	outline: none;
 	padding: #{.36 * $size__spacing-unit} #{.66 * $size__spacing-unit};
@@ -25,8 +25,8 @@ textarea {
 	border-radius: 0;
 
 	&:focus {
-		border-color: $color__link;
-		outline: thin solid rgba( $color__link, 0.15 );
+		border-color: theme-color(link);
+		outline: thin solid rgba( theme-color(link), 0.15 );
 		outline-offset: -4px;
 	}
 }
