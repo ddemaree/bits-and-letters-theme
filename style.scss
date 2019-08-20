@@ -57,7 +57,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "sass/mixins/mixins-master";
 
 /* Normalize */
-@import "sass/normalize";
+// @import "sass/normalize";
+@import "sass/tachyons";
 
 /* Accessibility */
 @import "sass/modules/accessibility";
@@ -108,22 +109,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .has-huge-font-size {
 	font-size: $font__size-xl;
 }
-
-
-// .entry {
-// 	max-width: 36rem;
-
-// 	@media screen and (max-width: 960px) {
-// 		margin: 0;
-// 	}
-// }
-
-// .entry h1, .entry-title {
-// 	// font-family: 'bely-display';
-// 	font-size: $font__size-xl;
-// }
-
-
 
 
 /* Forms */

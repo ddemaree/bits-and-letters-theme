@@ -89,14 +89,7 @@
 
 /* Calculates maximum width for post content */
 @mixin postContentMaxWidth() {
-
-	@include media(tablet) {
-		max-width: $size__site-tablet-content;
-	}
-
-	@include media(desktop) {
-		max-width: $size__site-desktop-content;
-	}
+	max-width: 36rem;
 }
 
 /* Nested sub-menu padding: 10 levels deep */

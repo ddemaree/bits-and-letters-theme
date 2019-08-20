@@ -160,7 +160,7 @@
 			}
 
 			&:before,
-			&:after, {
+			&:after {
 				position: absolute;
 				display: block;
 				width: 100%;
@@ -175,7 +175,6 @@
 		}
 	}
 
-	.entry-content,
 	.entry-summary {
 		max-width: calc(100% - (2 * #{ $size__spacing-unit }));
 		margin: 0 $size__spacing-unit;

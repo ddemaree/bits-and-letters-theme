@@ -68,8 +68,8 @@ $theme-colors: (
     featured-image-overlay: get-color('blue', 50)
   ),
   'dark': (
-    background-body: get-color('gray', 90),
-    background-input: get-color('gray', 90),
+    background-body: var(--near-black),
+    background-input: var(--near-black),
     background-screen: #f1f1f1,
     background-hr: #ccc,
     background-button: get-color('blue', 30),
@@ -82,9 +82,9 @@ $theme-colors: (
     text-screen: #21759b,
     text-input: #666,
     text-input-focus: #111,
-    link: get-color('blue', 30),
-    link-visited: get-color('purple', 30),
-    link-hover: get-color('blue', 50),
+    link: var(--light-blue),
+    link-visited: var(--light-purple),
+    link-hover: var(--blue),
     border: get-color('gray', 70),
     border-link: #0073aa,
     border-link-hover: get-color('blue', 70),
