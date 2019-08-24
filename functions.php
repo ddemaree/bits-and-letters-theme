@@ -32,7 +32,7 @@ if ( ! function_exists( 'bitsandletters_setup' ) ) :
 		 * If you're building a theme based on Twenty Nineteen, use a find and replace
 		 * to change 'bitsandletters' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'bitsandletters', get_template_directory() . '/languages' );
+		// load_theme_textdomain( 'bitsandletters', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -77,23 +77,8 @@ if ( ! function_exists( 'bitsandletters_setup' ) ) :
 			)
 		);
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 190,
-				'width'       => 190,
-				'flex-width'  => false,
-				'flex-height' => false,
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		// add_theme_support( 'customize-selective-refresh-widgets' );
 
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
@@ -102,10 +87,10 @@ if ( ! function_exists( 'bitsandletters_setup' ) ) :
 		add_theme_support( 'align-wide' );
 
 		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
+		// add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style-editor.css' );
+		// add_editor_style( 'style-editor.css' );
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -145,36 +130,36 @@ if ( ! function_exists( 'bitsandletters_setup' ) ) :
 		);
 
 		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'bitsandletters' ),
-					'slug'  => 'primary',
-					'color' => bitsandletters_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
-				),
-				array(
-					'name'  => __( 'Secondary', 'bitsandletters' ),
-					'slug'  => 'secondary',
-					'color' => bitsandletters_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'bitsandletters' ),
-					'slug'  => 'dark-gray',
-					'color' => '#111',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'bitsandletters' ),
-					'slug'  => 'light-gray',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'White', 'bitsandletters' ),
-					'slug'  => 'white',
-					'color' => '#FFF',
-				),
-			)
-		);
+		// add_theme_support(
+		// 	'editor-color-palette',
+		// 	array(
+		// 		array(
+		// 			'name'  => __( 'Primary', 'bitsandletters' ),
+		// 			'slug'  => 'primary',
+		// 			'color' => bitsandletters_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
+		// 		),
+		// 		array(
+		// 			'name'  => __( 'Secondary', 'bitsandletters' ),
+		// 			'slug'  => 'secondary',
+		// 			'color' => bitsandletters_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
+		// 		),
+		// 		array(
+		// 			'name'  => __( 'Dark Gray', 'bitsandletters' ),
+		// 			'slug'  => 'dark-gray',
+		// 			'color' => '#111',
+		// 		),
+		// 		array(
+		// 			'name'  => __( 'Light Gray', 'bitsandletters' ),
+		// 			'slug'  => 'light-gray',
+		// 			'color' => '#767676',
+		// 		),
+		// 		array(
+		// 			'name'  => __( 'White', 'bitsandletters' ),
+		// 			'slug'  => 'white',
+		// 			'color' => '#FFF',
+		// 		),
+		// 	)
+		// );
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
@@ -223,13 +208,10 @@ add_action( 'after_setup_theme', 'bitsandletters_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function bitsandletters_scripts() {
-	// wp_enqueue_style( 'bitsandletters-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+
 	wp_enqueue_style( 'bitsandletters-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
-
 	wp_enqueue_style( 'bitsandletters-fonts-ibmplex', 'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i|IBM+Plex+Mono&display=swap', array(), null);
-	wp_enqueue_style( 'bitsandletters-fonts-bely-display', 'https://use.typekit.net/yax1qaz.css', array(), null);
-
-	// wp_style_add_data( 'bitsandletters-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'bitsandletters-fonts-typekit', 'https://use.typekit.net/yax1qaz.css', array(), null);
 
 	if ( has_nav_menu( 'menu-1' ) ) {
 		wp_enqueue_script( 'bitsandletters-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.1', true );
@@ -257,17 +239,17 @@ add_action( 'wp_enqueue_scripts', 'bitsandletters_scripts' );
 /**
  * Enqueue supplemental block editor styles.
  */
-function bitsandletters_editor_customizer_styles() {
+// function bitsandletters_editor_customizer_styles() {
 
-	wp_enqueue_style( 'bitsandletters-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
+// 	wp_enqueue_style( 'bitsandletters-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
 
-	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
-		// Include color patterns.
-		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
-		wp_add_inline_style( 'bitsandletters-editor-customizer-styles', bitsandletters_custom_colors_css() );
-	}
-}
-add_action( 'enqueue_block_editor_assets', 'bitsandletters_editor_customizer_styles' );
+// 	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
+// 		// Include color patterns.
+// 		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
+// 		wp_add_inline_style( 'bitsandletters-editor-customizer-styles', bitsandletters_custom_colors_css() );
+// 	}
+// }
+// add_action( 'enqueue_block_editor_assets', 'bitsandletters_editor_customizer_styles' );
 
 /**
  * Display custom color CSS in customizer and on frontend.

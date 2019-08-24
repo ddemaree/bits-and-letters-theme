@@ -26,8 +26,7 @@ if ( ! function_exists( 'bitsandletters_posted_on' ) ) :
 		);
 
 		printf(
-			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-			bitsandletters_get_icon_svg( 'watch', 16 ),
+			'<span class="posted-on"><a href="%1$s" rel="bookmark">%2$s</a></span>',
 			esc_url( get_permalink() ),
 			$time_string
 		);

@@ -21,43 +21,9 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Variables
-# Normalize
-# Typography
-	## Headings
-	## Copy
-# Elements
-	## Lists
-	## Tables
-# Forms
-	## Buttons
-	## Fields
-# Navigation
-	## Links
-	## Menus
-	## Next & Previous
-# Accessibility
-# Alignments
-# Clearings
-# Layout
-# Widgets
-# Content
-	## Archives
-	## Posts and pages
-	## Comments
-# Blocks
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
 @import "sass/variables-site/variables-site";
 @import "sass/mixins/mixins-master";
 
-/* Normalize */
-// @import "sass/normalize";
 @import "sass/tachyons";
 
 /* Accessibility */
@@ -69,11 +35,230 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Typography */
 @import "sass/typography/typography";
 
+@mixin dd-centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin dd-max-width {
+	max-width: 62ch;
+}
+
+@mixin dd-vertical-margins {
+	margin-top: 1.67rem;
+	margin-bottom: 1.67rem;
+
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+%pad-horizontal, .dd-ph {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+%centered, .dd-c {
+	@include dd-centered();
+}
+
+%content-width, .dd-cw {
+	@include dd-max-width();
+}
+
+%vertical-margins, .dd-mv {
+	@include dd-vertical-margins();
+}
+
+.wp-block-image {
+	img {
+		display: block;
+	}
+}
+
+.wp-block-code {
+	font-size: 0.89rem;
+}
+
+.entry-header,
+.entry-content,
+.entry-footer {
+	@extend %centered;
+	@extend %content-width;
+	@extend %pad-horizontal;
+}
+
+.entry-header {
+	@extend %centered;
+
+	.updated {
+		display: none;
+	}
+
+	&:after {
+		@include dd-vertical-margins();
+		background-color: var(--gray);
+		height: 2px;
+		max-width: 2.25em;
+		border: 0;
+		content: ' ';
+		display: block;
+	}
+}
+
+.entry-title {
+	font-size: $font__size-xl;
+	line-height: 0.9;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: halyard-display;
+
+	a {
+		color: inherit;
+	}
+}
+
+.entry-meta {
+	margin-top: 0.5em;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+	font-variant-numeric: lining-nums;
+	-moz-font-feature-settings: "lnum";
+	-webkit-font-feature-settings: "lnum";
+	font-feature-settings: "lnum";
+	color: var(--gray);
+	font-family: halyard-micro, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: $font__size-sm;
+
+	a {
+		color: inherit;
+	}
+}
+
+.entry-category {
+	text-transform: uppercase;
+	font-family: 'halyard-text';
+	font-size: $font__size-base;
+	font-weight: bold;
+	color: var(--red);
+	a { color: inherit; }
+}
+
+.entry-content > * {
+	@extend %content-width;
+	@extend %vertical-margins;
+
+
+	&.alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		width: 100vw;
+		max-width: 100vw;
+
+		figcaption {
+			background-color: var(--pink);
+		}
+	}
+
+	&.has-small-font-size {
+		// font-family: 'chaparral-pro-caption', 'chaparral-pro', Georgia, serif;
+		// max-width: 100%;
+	}
+}
+
+.entry-content {
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0;
+		margin-top: 3.6rem;
+
+		& + * {
+			margin-top: 0.5em;
+		}
+	}
+
+	h2 {
+		font-size: $font__size-lg;
+	}
+
+	h3 {
+		font-size: $font__size-md;
+	}
+
+	h4 {
+		font-size: $font__size-base;
+	}
+
+	h5, h6 {
+		font-size: $font__size-sm;
+	}
+}
+
+.post-thumbnail {
+	@extend .dd-c;
+
+	&:focus {
+		outline: none;
+	}
+
+	.post-thumbnail-inner {
+		display: block;
+
+		img {
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+
 /* Elements */
-@import "sass/elements/elements";
+// @import "sass/elements/elements";
 
 /* Blocks */
-@import "sass/blocks/blocks";
+// @import "sass/blocks/blocks";
+
+
+
+/* Forms */
+
+// @import "sass/forms/forms";
+
+/* Navigation */
+
+// @import "sass/navigation/navigation";
+
+
+/* Alignments */
+
+// @import "sass/modules/alignments";
+
+/* Clearings */
+
+// @import "sass/modules/clearings";
+
+/* Layout */
+
+// @import "sass/layout/layout";
+
+/* Content */
+
+// @import "sass/site/site";
+
+/* Widgets */
+
+// @import "sass/site/secondary/widgets";
+
+
+/* Media */
+
+// @import "sass/media/media";
+
+
 
 
 
@@ -81,9 +266,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	font-size: 18px;
 	line-height: 1.2;
 	
-	@media screen and (max-width: 1080px) {
-		font-size: 16px;
-	}
+	// @media screen and (max-width: 1080px) {
+	// 	font-size: 16px;
+	// }
 }
 
 /* Block Library overrides */
@@ -109,40 +294,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .has-huge-font-size {
 	font-size: $font__size-xl;
 }
-
-
-/* Forms */
-
-@import "sass/forms/forms";
-
-/* Navigation */
-
-@import "sass/navigation/navigation";
-
-
-/* Alignments */
-
-@import "sass/modules/alignments";
-
-/* Clearings */
-
-@import "sass/modules/clearings";
-
-/* Layout */
-
-@import "sass/layout/layout";
-
-/* Content */
-
-@import "sass/site/site";
-
-/* Widgets */
-
-@import "sass/site/secondary/widgets";
-
-
-/* Media */
-
-@import "sass/media/media";
-
-

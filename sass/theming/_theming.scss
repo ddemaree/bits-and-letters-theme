@@ -18,9 +18,9 @@ body {
     @include theme-color-css-vars(light);
   }
 
-  @media (prefers-color-scheme: dark) {
-    @include theme-color-css-vars(dark);
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @include theme-color-css-vars(dark);
+  // }
 }
 
 .prefers-light-theme {
