@@ -1,3 +1,213 @@
+@use './fonts/typography' as type;
+@use './tachyons';
+
+* { box-sizing: border-box; }
+
+$colors: (
+  darkest-gray: #2a2a2a,
+  white: #fff
+);
+
+// TODO: Theme colors - background, text, text--mid-emphasis, text--low-emphasis, text--link…
+
+// TODO: In grid contexts, make .center use align/justify self?
+// .center { margin: 0 auto; }
+
+// Widths?
+$widths: ("w1" 1, "w2" 2, "w3" 5, "w4" 10, "w5" 20, "w6" 40, "w7" 60);
+$spacings: ("0" 0, "1" .25, "2" .5, "3" 1, "4" 1.5, "5" 3, "6" 6, "7" 12);
+
+:root {
+  @each $key, $width in $widths {
+    --width-#{$key}: #{$width * 1rem};
+  }
+  @each $key, $spacing in $spacings {
+    --spacing-#{$key}: #{$spacing * 1rem};
+  }
+
+  // TODO: Can this spacing scale be more meaningful?
+  --line-spacing-1: 0.67em;
+  --line-spacing-2: 1.34em;
+  --line-spacing-3: 2.68em;
+}
+
+@each $key, $width in $widths {
+  .d-#{$key} { width: var(--width-#{$key}); }
+  .d-m#{$key} { max-width: var(--width-#{$key}); }
+}
+@each $key, $spacing in $spacings {
+  @each $property, $shortcut in ("margin" "m", "padding" "p") {
+    .d-#{$shortcut}a#{$key} {
+      #{$property}: var(--spacing-#{$key}); }
+    .d-#{$shortcut}v#{$key} {
+      #{$property}-top: var(--spacing-#{$key});
+      #{$property}-bottom: var(--spacing-#{$key}); }
+    .d-#{$shortcut}h#{$key} {
+      #{$property}-left: var(--spacing-#{$key});
+      #{$property}-right: var(--spacing-#{$key}); }
+    .d-#{$shortcut}t#{$key} {
+      #{$property}-top: var(--spacing-#{$key}); }
+    .d-#{$shortcut}b#{$key} {
+      #{$property}-bottom: var(--spacing-#{$key}); }
+    .d-#{$shortcut}l#{$key} {
+      #{$property}-left: var(--spacing-#{$key}); }
+    .d-#{$shortcut}r#{$key} {
+      #{$property}-right: var(--spacing-#{$key}); }
+  }
+}
+
+.bnl-serif {
+  font-family: type.$serif-fonts;
+}
+
+.c-text--mid {
+  color: var(--gray);
+}
+
+.header-icon {
+  svg {
+    height: 2em;
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.primary-menu-wrapper {
+  display: flex;
+  li {
+    padding: 0 0.5em;
+  }
+}
+
+
 body {
-  font-family: 'Courier New', Courier, monospace;
+  color: map-get($colors, darkest-gray);
+
+  // font-family: $sans-se;
+  font-family: type.$sans-serif-fonts;
+  // font-family: type.$serif-fonts;
+  font-size: 1.125rem;
+  line-height: var(--line-spacing-2);
+  font-weight: 400;
+}
+
+a:link,
+a:visited {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.entry-wrapper {
+  img {
+    display: block;
+    margin: 0;
+    height: auto;
+
+    @media (max-width: 60rem) {
+      width: 100%;
+    }
+  }
+}
+
+.featured-media {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  margin-bottom: var(--line-spacing-3);
+  padding: 0;
+  
+  img {
+    max-width: 80rem;
+  }
+  
+  @media (min-width: 60rem) {
+    img {
+      max-height: 30rem;
+      object-fit: cover;
+      object-position: 50% 30%;
+    }
+  }
+}
+
+// .entry-wrapper {
+// }
+
+.entry-title {
+  // font-size: 2.5rem;
+  // line-height: 1.2;
+  // margin: 0;
+  // font-weight: 800;
+  // letter-spacing: -0.5px;
+}
+
+.entry-meta {
+  // color: var(--gray);
+  // margin: 0.5em 0 1em;
+}
+
+// .entries-list {
+//   display: grid;
+//   grid-gap: var(--spacing-4);
+//   grid-template-columns: 1fr 1fr;
+
+//   &__card {
+//     display: grid;
+//     grid-template-rows: 4rem auto 2rem;
+//     justify-items: center;
+//     align-items: center;
+//   }
+// }
+
+
+.entry-content {
+  font-size: 1.375rem;
+  line-height: 1.34;
+
+  display: flex;
+  flex-direction: column;
+
+  blockquote, dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
+    min-width: 100%;
+    margin-top: 0;
+    margin-bottom: var(--line-spacing-2);
+  }
+
+  figure {
+    margin: var(--line-spacing-2) 0 var(--line-spacing-3);
+    display: block;
+  }
+
+  figcaption {
+    margin: 1em auto 0;
+    padding: 0 1.5rem;
+    text-align: center;
+    max-width: 60ch;
+  }
+
+  blockquote {
+    --bq-line-thickness: 3px;
+    border-left: var(--bq-line-thickness) solid var(--color-accent, currentColor);
+    padding-left: calc(var(--spacing-4) - var(--bq-line-thickness));
+    margin-left: calc(-1 * var(--spacing-4));
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .wp-block-separator {
+    font-size: 1rem;
+    border: 0;
+    margin: 2em 0;
+    text-align: center;
+
+    &:before {
+      content: '•••';
+      display: block;
+      letter-spacing: 1em;
+    }
+
+    figure + &,
+    & + figure {
+      margin-top: 0;
+    }
+  }
 }
