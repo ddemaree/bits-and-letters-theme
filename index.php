@@ -3,14 +3,20 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-<div class="center entries-list mw7 pa4">
+
+<div class="bg-pink tc f3 pv3">
+<h3>FPO - HEADER AREA</h3>
+<p>Site, category, tag, or search into</p>
+</div>
+
+<div class="center entries-list content-wrapper">
 <?php
 if( have_posts() ) {
   $postCount = 0;
   while( have_posts() ) {
     $postCount++;
 
-    if($postCount > 1) { echo '<hr class="entry-separator mv4 b--light-gray">'; }
+    if($postCount > 1) bnl_separator('archives');
 
     the_post(); ?>
   <article <?php post_class('entries-list__card'); ?> id="post-<?php the_ID(); ?>">
@@ -21,7 +27,7 @@ if( have_posts() ) {
     bnl_entry_meta();
 
     if(has_excerpt()) {
-      print( '<p class="entry-excerpt f4 lh-copy measure ma0 mv2 bnl-serif">' . get_the_excerpt() . '</p>' );
+      print( '<p class="entry-excerpt lh-copy measure ma0 mv2 bnl-serif">' . get_the_excerpt() . '</p>' );
     }
     ?>
   </article>

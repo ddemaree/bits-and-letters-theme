@@ -1,44 +1,21 @@
 <?php
 
-$prev_text = sprintf(
-	'%s <span class="nav-prev-text">%s</span>',
-	'<span aria-hidden="true">&larr;</span>',
-	__( 'Newer <span class="nav-short">Posts</span>', 'twentytwenty' )
-);
-$next_text = sprintf(
-	'<span class="nav-next-text">%s</span> %s',
-	__( 'Older <span class="nav-short">Posts</span>', 'twentytwenty' ),
-	'<span aria-hidden="true">&rarr;</span>'
-);
+$prev_page_text = '<span class="pagination__arrow pagination__arrow--left" aria-hidden="true">&larr;&nbsp;</span>Newer posts';
+$next_page_text = 'Older posts<span class="pagination__arrow pagination__arrow--right" aria-hidden="true">&nbsp;&rarr;</span>';
 
-$posts_pagination = get_the_posts_pagination(
-	array(
-		'mid_size'  => 1,
-		'prev_text' => $prev_text,
-		'next_text' => $next_text,
-	)
-);
+$prev_page_link = get_previous_posts_link($prev_page_text);
+$next_page_link = get_next_posts_link($next_page_text);
 
-// If we're not outputting the previous page link, prepend a placeholder with visibility: hidden to take its place.
-if ( strpos( $posts_pagination, 'prev page-numbers' ) === false ) {
-	$posts_pagination = str_replace( '<div class="nav-links">', '<div class="nav-links"><span class="prev page-numbers placeholder" aria-hidden="true">' . $prev_text . '</span>', $posts_pagination );
-}
+if($prev_page_link || $next_page_link):
 
-// If we're not outputting the next page link, append a placeholder with visibility: hidden to take its place.
-if ( strpos( $posts_pagination, 'next page-numbers' ) === false ) {
-	$posts_pagination = str_replace( '</div>', '<span class="next page-numbers placeholder" aria-hidden="true">' . $next_text . '</span></div>', $posts_pagination );
-}
+	bnl_separator('archives'); ?>
 
-if ( $posts_pagination ) { ?>
-
-	<div class="pagination-wrapper section-inner">
-
-		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
-
-		<?php echo $posts_pagination; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped during generation. ?>
-
-	</div><!-- .pagination-wrapper -->
-
-	<?php
-}
-?>
+<nav class="pagination pagination--archives f4 mv5 flex justify-between">
+	<div class="pagination__link pagination__link--previous">
+		<?= $prev_page_link ? $prev_page_link : bnl_get_pagination_placeholder($prev_page_text) ?>
+	</div>
+	<div class="pagination__link pagination__link--next">
+		<?= $next_page_link ? $next_page_link : bnl_get_pagination_placeholder($next_page_text) ?>
+	</div>
+</nav>
+<?php endif; ?>

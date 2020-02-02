@@ -10,17 +10,17 @@ get_header();
       while( have_posts() ) {
         $postCount++;
 
-        the_post(); ?>
-
-    <article <?php post_class('entry-wrapper'); ?> id="post-<?php the_ID(); ?>">
-    <?php
-        get_template_part('template-parts/entry-header');
-        get_template_part('template-parts/featured-image');
+        the_post();
+    
         get_template_part('template-parts/full-content');
       }
     }
     ?>
-    </article>
+
+    <div class="bg-pink tc f3 pv3">
+    <h3>FPO - SINGLE PAGE</h3>
+    </div>
+
   </div>
 </main>
 

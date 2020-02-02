@@ -65,7 +65,7 @@ function bnl_enqueue_styles() {
 	remove_action('wp_head', 'wlwmanifest_link');
 	remove_action('wp_head', 'wp_generator');
   
-  wp_deregister_script('jquery');
+	wp_deregister_script('jquery');
   
   if ( !current_user_can( 'update_core' ) ) {
 		wp_deregister_style( 'dashicons' ); 
@@ -73,11 +73,7 @@ function bnl_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'bnl_enqueue_styles' );
 
-/**
- * Register navigation menus uses wp_nav_menu in five places.
- */
-function twentytwenty_menus() {
-
+function bnl_menus() {
 	$locations = array(
 		'primary'  => __( 'Primary Menu', 'bnl' ),
 		'footer'   => __( 'Footer Menu', 'bnl' ),
@@ -86,26 +82,4 @@ function twentytwenty_menus() {
 
 	register_nav_menus( $locations );
 }
-add_action( 'init', 'twentytwenty_menus' );
-
-function get_reading_time() {
-	$content = get_post_field( 'post_content', $post->ID );
-	$word_count = str_word_count( strip_tags( $content ) );
-	$readingtime = ceil($word_count / 200);
-
-	$totalreadingtime = $readingtime . " min read";
-
-	return $totalreadingtime;
-}
-
-function bnl_reading_time() {
-	printf("<div class=\"entry-reading-time\">%1s</div>", get_reading_time());
-}
-
-function bnl_entry_meta() {
-	print("<div class=\"entry-meta gray mh0 mt1 mb3\">");
-	printf("<span class=\"entry-date\">%1s</span>", get_the_date());	
-	print('<span class="ph2">•</span>');
-	printf("<span class=\"entry-reading-time\">%1s</span>", get_reading_time());	
-	print("</div>");
-}
+add_action( 'init', 'bnl_menus' );

@@ -102,3 +102,37 @@ function bnl_site_description( $echo = true ) {
 
 	echo $html;
 }
+
+
+function bnl_get_pagination_placeholder( $text = '' ) {
+ return '<span class="pagination__placeholder gray" aria=hidden="true">' . $text . '</span>';
+}
+
+function bnl_separator( $typeModifier = '' ) {
+	$classnames = 'mv4 separator';
+	if($typeModifier) $classnames .= ' separator--' . $typeModifier;
+
+	echo sprintf('<hr class="%s" aria-hidden="true" />', $classnames);
+}
+
+function bnl_entry_meta() {
+	print("<div class=\"entry-meta f6 gray mh0 mt1 mb3\">");
+	printf("<span class=\"entry-date\">%1s</span>", get_the_date());	
+	print('<span class="ph2">•</span>');
+	printf("<span class=\"entry-reading-time\">%1s</span>", get_reading_time());	
+	print("</div>");
+}
+
+function get_reading_time() {
+	$content = get_post_field( 'post_content', $post->ID );
+	$word_count = str_word_count( strip_tags( $content ) );
+	$readingtime = ceil($word_count / 200);
+
+	$totalreadingtime = $readingtime . " min read";
+
+	return $totalreadingtime;
+}
+
+function bnl_reading_time() {
+	printf("<div class=\"entry-reading-time\">%1s</div>", get_reading_time());
+}
