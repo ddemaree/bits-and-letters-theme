@@ -116,7 +116,7 @@ function bnl_separator( $typeModifier = '' ) {
 }
 
 function bnl_entry_meta() {
-	print("<div class=\"entry-meta f6 gray mh0 mt1 mb3\">");
+	print("<div class=\"entry-meta f6 gray mh0 mt1\">");
 	printf("<span class=\"entry-date\">%1s</span>", get_the_date());	
 	print('<span class="ph2">•</span>');
 	printf("<span class=\"entry-reading-time\">%1s</span>", get_reading_time());	

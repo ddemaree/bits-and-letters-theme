@@ -1,5 +1,9 @@
 <?php
 
+function bnl_has_fancy_header() {
+	return has_post_thumbnail();
+}
+
 function bnl_theme_support() {
 
 	// Let WordPress manage the document title.

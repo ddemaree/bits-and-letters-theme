@@ -2,6 +2,3 @@
 node_modules
 dist/*
 !dist/.keep
-assets/fonts/*
-!assets/fonts/.keep
-!assets/fonts/typography.scss

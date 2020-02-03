@@ -6,9 +6,12 @@
   --link-color: #000;
   --line-color: #0006;
 
-  --lh-1: 1.56rem;
-  --lh-2: 3.1rem;
-  --lh-3: 6.2rem;
+  --copy-font-size:   1rem;   // 22px
+  --copy-line-height: 1.6rem; // 36px 
+
+  --lh-1: 1.8rem; // 36px
+  --lh-2: 2.4rem; // 48px
+  --lh-3: 3.2rem; // 64px
 }
 
 @mixin fancy-underlines {
@@ -18,11 +21,14 @@
   background-size: 1px 1px;
 }
 
-.cms-content {
-  --copy-line-height: 1.63rem;
-
+.entry-content {
   color: var(--text-color);
+  font-size: var(--copy-font-size);
   line-height: var(--copy-line-height);
+
+  & > *:first-child {
+    margin-top: 0 !important;
+  }
 
   %all-blocks {
     margin: 0;
@@ -54,13 +60,13 @@
     // Nested lists
     ul, ol {
       margin-bottom: 0;
-      margin-top: 0.5em;
+      margin-top: 0.6em;
     }
 
     // All list items
     & > li {
       margin-left: 1.5em;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.6em;
 
       &:before {
         display: inline-block;
@@ -102,29 +108,46 @@
     line-height: 1.2;
     margin-bottom: 0.5rem;
   }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    & + *:not(h2) {
+      margin-top: var(--copy-line-height);
+    }
+  }
   
   h1, h2 {
-    // Block above would have 1x LH spacing
-    margin-top: 2.18rem;    
+    // Block above would have 1x LH spacing, so this would be a double space
+    margin-top: var(--copy-line-height);
+  }
+
+  hr + h1, hr + h2 {
+    margin-top: unset;
   }
 
   // SEPARATORS
 
   & > hr, .wp-block-separator {
-    border-style: solid;
-    width: 6rem;
-    border-color: var(--line-color);
-    border-width: 2px 0 0 0;
-    height: 0px;
-
-    margin-bottom: 3.1rem;
-
+    
     // HR spacing minus the clh spacing from the block above
-    margin-top: calc(3.1rem - var(--copy-line-height));
+    margin-bottom: 2rem;
+    margin-top: calc(2rem - var(--copy-line-height));
 
-    & + h1, & + h2 {
-      // Slight correction since extra HR spacing plus white space around headings seems too much, reduced effective spacing to 60px or so
-      margin-top: -0.36rem;
+    height: var(--copy-line-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    border: 0;
+
+    &:before {
+      content: '•••';
+      color: var(--line-color);
+      display: inline-block;
+      font-size: 1rem;
+      letter-spacing: 1em;
     }
   }
 
@@ -135,24 +158,77 @@
     box-shadow: inset 3px 0 0 0 var(--text-color);
     padding-left: 1.5rem;
     margin-left: -1.5rem;
+    box-sizing: content-box;
 
-    p:last-child {
-      margin-bottom: 0;
+    & > p {
+      min-width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
+
     &.is-style-large, &.is-large {
+      margin-top: calc(2rem - var(--copy-line-height));
+      margin-bottom: 2rem;
+
       p {
-        font-size: 1.27em;
+        font-size: 1.4rem;
         line-height: 2rem;
+      }
+    }
+  }
+
+  // PULL QUOTES
+
+  .wp-block-pullquote {
+    margin-top: calc(2rem - var(--copy-line-height));
+    margin-bottom: 2rem;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      margin-bottom: 1rem;
+
+      &:before, &:after {
+        color: var(--light-text-color);
+        margin-left: 2px;
+        margin-right: 2px;
+      }
+
+      &:before {
+        content: "“";
+      }
+      &:after {
+        content: "”";
+      }
+    }
+
+    cite {
+      color: var(--light-text-color);
+      font-family: type.$sans-serif-fonts;
+
+      &:before {
+        content: '—';
+        display: inline-block;
       }
     }
   }
 
   // FIGURES (Code blocks, galleries, images, pull quotes)
 
-  figure, .wp-block-code, .wp-block-image, .wp-block-gallery {
+  %figures {
     margin-left: 0;
     margin-right: 0;
+
+    & + %figures {
+      margin-top: -0.6rem;
+    }
+  }
+
+  figure, .wp-block-code, .wp-block-image, .wp-block-gallery, .wp-block-embed {
+    @extend %figures;
   }
 
   .wp-block-pullquote > blockquote,
@@ -162,13 +238,14 @@
 
   // CODE BLOCKS
 
-  .wp-block-code {
+  & > pre, .wp-block-code {
+    overflow: scroll;
     background-color: #0001;
     font-size: 16px;
     padding: 1em;
     border-radius: 4px;
+    max-width: 100%;
   }
-
 
   // FIGURES 
 
@@ -233,8 +310,6 @@
 
   figcaption {
     @extend .center;
-    @extend .mt2;
-    @extend .mb0;
 
     color: var(--light-text-color);
     font-size: 0.8rem;
@@ -243,5 +318,31 @@
     padding: 0;
     text-align: center;
     max-width: 60ch;
+  }
+}
+
+.bnl-test-group {
+  width: 100vw;
+  height: 20rem;
+  position: relative;
+  margin: 2rem 0;
+
+  &__content, &__content > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    vertical-align: middle;
   }
 }

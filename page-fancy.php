@@ -1,9 +1,16 @@
 <?php
-get_header();
+/*
+Template Name: Fancy Header
+Template Post Type: page
+*/
+
 the_post();
+get_header();
 ?>
 
 <main id="site-content" role="main">
+  <?php get_template_part('template-parts/fancy-header'); ?>
+
   <div class="wrapper">
     <?php
       get_template_part('template-parts/full-content');
